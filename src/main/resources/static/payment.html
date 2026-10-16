@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | MH 08 YATRI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --yellow: #ffb800;
+            --yellow-hover: #ffc928;
+            --background: #080b0e;
+            --card: #10161d;
+            --border: #252d36;
+            --muted: #7890a8;
+            --white: #f8fafc;
+            --green: #31d18a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--white);
+            background:
+                radial-gradient(ellipse at 12% 30%, rgba(255,184,0,.065), transparent 34%),
+                radial-gradient(ellipse at 90% 80%, rgba(255,184,0,.025), transparent 35%),
+                var(--background);
+            min-height: 100vh;
+        }
+
+        button, input, select {
+            font: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            min-height: 112px;
+            padding: 18px 3.5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+            border-bottom: 1px solid #1c2229;
+            background: rgba(7, 10, 13, .95);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            width: 96px;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            color: #d8dee6;
+        }
+
+        .brand-small {
+            color: #78889a;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .brand-name {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 38px;
+        }
+
+        .nav-links a {
+            color: #87919d;
+            font-size: 15px;
+            font-weight: 700;
+            transition: color .2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--yellow);
+        }
+
+        .nav-button {
+            border: 0;
+            background: var(--yellow);
+            color: #080b0e;
+            border-radius: 12px;
+            padding: 15px 27px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .nav-button:hover,
+        .primary-button:hover {
+            background: var(--yellow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* MAIN LAYOUT */
+
+        .page {
+            width: min(1200px, 92%);
+            margin: 65px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 34px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--yellow);
+            background: rgba(255,184,0,.08);
+            border: 1px solid rgba(255,184,0,.22);
+            border-radius: 30px;
+            padding: 10px 15px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .eyebrow-dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 12px rgba(49,209,138,.6);
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 62px);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -2.7px;
+            margin-bottom: 16px;
+        }
+
+        h1 span {
+            color: var(--yellow);
+        }
+
+        .subtitle {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 15px;
+            max-width: 650px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(300px, .85fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #121921, #0d1218);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 32px;
+            box-shadow: 0 20px 55px rgba(0,0,0,.18);
+        }
+
+        .card-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-label {
+            color: var(--yellow);
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 1.3;
+            letter-spacing: -.7px;
+        }
+
+        .heading-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(255,184,0,.1);
+            color: var(--yellow);
+            display: grid;
+            place-items: center;
+            font-size: 23px;
+            flex-shrink: 0;
+        }
+
+        /* FORM */
+
+        .field {
+            margin-bottom: 23px;
+        }
+
+        .field label {
+            display: block;
+            color: #8e9bad;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            min-height: 53px;
+            color: #f8fafc;
+            background: #0a0f14;
+            border: 1px solid #2a333d;
+            border-radius: 11px;
+            padding: 14px 15px;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .field input::placeholder {
+            color: #586a7e;
+        }
+
+        .field input:focus,
+        .field select:focus {
+            border-color: var(--yellow);
+            box-shadow: 0 0 0 3px rgba(255,184,0,.08);
+        }
+
+        .field select option {
+            background: #10161d;
+            color: white;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 5px;
+            margin-bottom: 25px;
+        }
+
+        .payment-option {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .payment-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .option-content {
+            min-height: 95px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid #2a333d;
+            border-radius: 13px;
+            background: #0a0f14;
+            color: #a7b3c0;
+            text-align: center;
+            transition: .2s;
+            padding: 10px 5px;
+        }
+
+        .option-icon {
+            font-size: 24px;
+        }
+
+        .option-content strong {
+            font-size: 12px;
+        }
+
+        .payment-option input:checked + .option-content {
+            color: var(--yellow);
+            border-color: var(--yellow);
+            background: rgba(255,184,0,.07);
+            box-shadow: inset 0 0 0 1px rgba(255,184,0,.12);
+        }
+
+        .payment-option input:focus-visible + .option-content {
+            outline: 2px solid var(--yellow);
+            outline-offset: 3px;
+        }
+
+        .method-note {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-top: -12px;
+            margin-bottom: 24px;
+        }
+
+        .primary-button {
+            width: 100%;
+            min-height: 55px;
+            border: none;
+            border-radius: 11px;
+            background: var(--yellow);
+            color: #080b0e;
+            font-weight: 800;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 0 19px;
+            transition: .2s;
+        }
+
+        .primary-button:disabled {
+            opacity: .65;
+            cursor: wait;
+            transform: none;
+        }
+
+        .secure-note {
+            text-align: center;
+            color: #6d8299;
+            font-size: 10px;
+            margin-top: 18px;
+        }
+
+        /* SUMMARY */
+
+        .summary-card {
+            position: sticky;
+            top: 25px;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 17px 0;
+            border-bottom: 1px solid #252d36;
+            color: #95a3b3;
+            font-size: 13px;
+        }
+
+        .summary-line strong {
+            color: #f5f7fa;
+            font-size: 13px;
+            text-align: right;
+            overflow-wrap: anywhere;
+        }
+
+        .summary-line.total {
+            border-bottom: none;
+            padding-top: 24px;
+            margin-top: 4px;
+        }
+
+        .summary-line.total span {
+            color: white;
+            font-weight: 800;
+        }
+
+        .summary-line.total strong {
+            color: var(--yellow);
+            font-size: 28px;
+            letter-spacing: -.7px;
+        }
+
+        .summary-divider {
+            border: 0;
+            border-top: 1px dashed #35404b;
+            margin: 8px 0;
+        }
+
+        .trust-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(49,209,138,.055);
+            border: 1px solid rgba(49,209,138,.17);
+            border-radius: 13px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .trust-icon {
+            color: var(--green);
+            font-size: 20px;
+        }
+
+        .trust-box strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .trust-box p {
+            color: #8496a9;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .status-message {
+            display: none;
+            padding: 14px;
+            margin-top: 18px;
+            border-radius: 11px;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .status-message.success {
+            display: block;
+            color: #8ff0c0;
+            background: rgba(49,209,138,.08);
+            border: 1px solid rgba(49,209,138,.25);
+        }
+
+        .status-message.error {
+            display: block;
+            color: #ffb1b1;
+            background: rgba(255,75,75,.08);
+            border: 1px solid rgba(255,75,75,.25);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px 15px 35px;
+            border-top: 1px solid #1c2229;
+            color: #617286;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .footer span {
+            color: var(--yellow);
+        }
+
+        @media (max-width: 850px) {
+            .navbar {
+                min-height: auto;
+                flex-wrap: wrap;
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                gap: 25px;
+                padding-top: 10px;
+            }
+
+            .nav-button {
+                padding: 12px 18px;
+            }
+
+            .page {
+                margin: 42px auto;
+            }
+
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-card {
+                position: static;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .brand {
+                gap: 8px;
+            }
+
+            .logo {
+                width: 70px;
+                font-size: 16px;
+            }
+
+            .brand-name {
+                font-size: 17px;
+            }
+
+            .brand-small {
+                font-size: 8px;
+            }
+
+            .nav-links {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            h1 {
+                letter-spacing: -1.7px;
+            }
+
+            .card {
+                padding: 22px 18px;
+                border-radius: 19px;
+            }
+
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .payment-options {
+                gap: 7px;
+            }
+
+            .option-content {
+                min-height: 83px;
+            }
+
+            .option-content strong {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a class="brand" href="index.html">
+            <div class="logo">MH 08<br>YATRI</div>
+            <div>
+                <div class="brand-small">YOUR JOURNEY</div>
+                <div class="brand-name">MH 08 YATRI</div>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
+            <a href="vehicle.html">Vehicles</a>
+            <a href="booking.html">Book Ride</a>
+            <a href="payment.html">Payment</a>
+        </nav>
+
+        <button class="nav-button" onclick="location.href='booking.html'">
+            Book Now
+        </button>
+    </header>
+
+    <!-- PAYMENT PAGE -->
+    <main class="page">
+
+        <div class="page-heading">
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                Maharashtra • India
+            </div>
+
+            <h1>Complete Your<br>Payment <span>Securely.</span></h1>
+
+            <p class="subtitle">
+                You're one step away from your journey. Review your booking,
+                choose your preferred payment method and submit your payment request.
+            </p>
+        </div>
+
+        <div class="layout">
+
+            <!-- PAYMENT FORM -->
+            <section class="card">
+                <div class="card-heading">
+                    <div>
+                        <div class="section-label">SECURE CHECKOUT</div>
+                        <h2>Payment Details</h2>
+                    </div>
+                    <div class="heading-icon">↗</div>
+                </div>
+
+                <form id="paymentForm">
+
+                    <div class="two-columns">
+                        <div class="field">
+                            <label for="bookingId">Booking ID</label>
+                            <input
+                                type="number"
+                                id="bookingId"
+                                name="bookingId"
+                                min="1"
+                                placeholder="Enter booking ID"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="amount">Amount (₹)</label>
+                            <input
+                                type="number"
+                                id="amount"
+                                name="amount"
+                                min="1"
+                                step="0.01"
+                                placeholder="Enter fare"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="customerName">Customer Name</label>
+                        <input
+                            type="text"
+                            id="customerName"
+                            name="customerName"
+                            maxlength="100"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            maxlength="150"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label>Choose Payment Method</label>
+
+                        <div class="payment-options">
+
+                            <label class="payment-option">
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="UPI"
+                                    checked
+                                >
+                                <span class="option-content">
+                                    <span class="option-icon">📱</span>
+                                    <strong>UPI</strong>
+                                </span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="CARD"
+                                >
+                                <span class="option-content">
+                                    <span class="option-icon">💳</span>
+                                    <strong>Card</strong>
+                                </span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input
+                                    type="radio"
+                                    name="paymentMethod"
+                                    value="CASH"
+                                >
+                                <span class="option-content">
+                                    <span class="option-icon">💵</span>
+                                    <strong>Cash</strong>
+                                </span>
+                            </label>
+
+                        </div>
+
+                        <p class="method-note" id="methodNote">
+                            UPI selected. Actual online payment requires a configured payment gateway.
+                        </p>
+                    </div>
+
+                    <button class="primary-button" type="submit" id="payButton">
+                        <span id="buttonText">Submit Payment Request</span>
+                        <span>→</span>
+                    </button>
+
+                    <div class="secure-note">
+                        🔒 Your payment request is sent to the MH08Yatri server.
+                    </div>
+
+                    <div
+                        id="statusMessage"
+                        class="status-message"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
+                </form>
+            </section>
+
+            <!-- ORDER SUMMARY -->
+            <aside class="card summary-card">
+                <div class="card-heading">
+                    <div>
+                        <div class="section-label">YOUR BOOKING</div>
+                        <h2>Order Summary</h2>
+                    </div>
+                    <div class="heading-icon">▤</div>
+                </div>
+
+                <div class="summary-line">
+                    <span>Booking ID</span>
+                    <strong id="summaryBooking">Not entered</strong>
+                </div>
+
+                <div class="summary-line">
+                    <span>Customer</span>
+                    <strong id="summaryCustomer">Not entered</strong>
+                </div>
+
+                <div class="summary-line">
+                    <span>Payment method</span>
+                    <strong id="summaryMethod">UPI</strong>
+                </div>
+
+                <div class="summary-line">
+                    <span>Payment status</span>
+                    <strong id="summaryStatus">Not submitted</strong>
+                </div>
+
+                <hr class="summary-divider">
+
+                <div class="summary-line total">
+                    <span>Total Amount</span>
+                    <strong id="summaryAmount">₹0.00</strong>
+                </div>
+
+                <div class="trust-box">
+                    <span class="trust-icon">✓</span>
+                    <div>
+                        <strong>Safe • Reliable • Professional</strong>
+                        <p>
+                            Check your booking details before submitting.
+                            Online payments must be completed through an authorized gateway.
+                        </p>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p><span>MH 08 YATRI</span> — Local Roots. Smart Mobility. Wider Reach.</p>
+        <p>Passenger rides • Goods transport • Reliable journeys</p>
+    </footer>
+
+    <script>
+        const paymentForm = document.getElementById("paymentForm");
+        const bookingIdInput = document.getElementById("bookingId");
+        const amountInput = document.getElementById("amount");
+        const customerNameInput = document.getElementById("customerName");
+        const emailInput = document.getElementById("email");
+        const payButton = document.getElementById("payButton");
+        const buttonText = document.getElementById("buttonText");
+        const statusMessage = document.getElementById("statusMessage");
+
+        const currency = new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "INR"
+        });
+
+        function getPaymentMethod() {
+            return document.querySelector(
+                'input[name="paymentMethod"]:checked'
+            ).value;
+        }
+
+        function updateSummary() {
+            const bookingId = bookingIdInput.value.trim();
+            const amount = Number(amountInput.value);
+            const customer = customerNameInput.value.trim();
+            const method = getPaymentMethod();
+
+            document.getElementById("summaryBooking").textContent =
+                bookingId || "Not entered";
+
+            document.getElementById("summaryCustomer").textContent =
+                customer || "Not entered";
+
+            document.getElementById("summaryMethod").textContent = method;
+
+            document.getElementById("summaryAmount").textContent =
+                amount > 0 && Number.isFinite(amount)
+                    ? currency.format(amount)
+                    : currency.format(0);
+
+            const notes = {
+                UPI: "UPI selected. Actual online payment requires a configured payment gateway.",
+                CARD: "Card selected. Do not enter card details here. A payment gateway is required.",
+                CASH: "Cash selected. Payment can be collected directly by the driver."
+            };
+
+            document.getElementById("methodNote").textContent = notes[method];
+        }
+
+        [
+            bookingIdInput,
+            amountInput,
+            customerNameInput
+        ].forEach(input => input.addEventListener("input", updateSummary));
+
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(input => {
+            input.addEventListener("change", updateSummary);
+        });
+
+        function showMessage(message, type) {
+            statusMessage.className = "status-message " + type;
+            statusMessage.textContent = message;
+        }
+
+        paymentForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const bookingId = Number(bookingIdInput.value);
+            const amount = Number(amountInput.value);
+            const customerName = customerNameInput.value.trim();
+            const email = emailInput.value.trim();
+            const paymentMethod = getPaymentMethod();
+
+            if (!Number.isInteger(bookingId) || bookingId <= 0) {
+                showMessage("Enter a valid booking ID.", "error");
+                return;
+            }
+
+            if (!Number.isFinite(amount) || amount <= 0) {
+                showMessage("Enter a valid amount greater than zero.", "error");
+                return;
+            }
+
+            if (!customerName || !email) {
+                showMessage("Enter your name and email address.", "error");
+                return;
+            }
+
+            /*
+             * Backend integration:
+             * This example expects POST /api/payments to accept:
+             * bookingId, amount, paymentMethod.
+             *
+             * Adapt the URL and JSON fields if your Java controller
+             * uses different names or a different endpoint.
+             */
+            const paymentData = {
+    bookingId: bookingId,
+    amount: amount,
+    paymentMethod: paymentMethod,
+    customerName: customerName,
+    email: email
+};
+
+            payButton.disabled = true;
+            buttonText.textContent = "Submitting...";
+            statusMessage.className = "status-message";
+            statusMessage.textContent = "";
+
+            try {
+                const response = await fetch("/api/payments", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(paymentData)
+                });
+
+                const responseText = await response.text();
+                let responseData = {};
+
+                try {
+                    responseData = responseText ? JSON.parse(responseText) : {};
+                } catch {
+                    responseData = { message: responseText };
+                }
+
+                if (!response.ok) {
+                    throw new Error(
+                        responseData.message ||
+                        responseData.error ||
+                        "Server returned HTTP " + response.status
+                    );
+                }
+
+                document.getElementById("summaryStatus").textContent =
+                    responseData.status || "Request received";
+
+                showMessage(
+                    "Payment request submitted successfully. " +
+                    "This does not confirm that money has been transferred. " +
+                    (responseData.message || ""),
+                    "success"
+                );
+
+                buttonText.textContent = "Request Submitted";
+
+            } catch (error) {
+                showMessage(
+                    "Could not submit the payment request. " +
+                    "Make sure Spring Boot is running and POST /api/payments " +
+                    "matches your backend controller. Details: " + error.message,
+                    "error"
+                );
+
+                buttonText.textContent = "Try Again";
+            } finally {
+                payButton.disabled = false;
+            }
+        });
+        async function autoFillPaymentDetails() {
+    const params = new URLSearchParams(window.location.search);
+
+    const bookingId = params.get("bookingId");
+    const amount = params.get("amount");
+    const customerName = params.get("customerName");
+    const email = params.get("email");
+
+    if (bookingId) {
+        bookingIdInput.value = bookingId;
+    }
+
+    if (amount) {
+        amountInput.value = amount;
+    }
+
+    if (customerName) {
+        customerNameInput.value = customerName;
+    }
+
+    if (email) {
+        emailInput.value = email;
+    }
+
+    updateSummary();
+
+    // If booking ID is available but customer details aren't in the URL,
+    // fetch the saved booking from Spring Boot.
+    if (bookingId && (!customerName || !email)) {
+        await loadBookingDetails(bookingId);
+    }
+}
+
+async function loadBookingDetails(bookingId) {
+    try {
+        const response = await fetch(
+            `http://localhost:8080/api/bookings/${encodeURIComponent(bookingId)}`
+        );
+
+        if (!response.ok) {
+            console.warn("Could not load booking details:", response.status);
+            return;
+        }
+
+        const booking = await response.json();
+
+        if (!customerNameInput.value.trim() && booking.customerName) {
+            customerNameInput.value = booking.customerName;
+        }
+
+        // Your current Booking.java does not contain an email field.
+        // This will work only if the backend returns an email.
+        if (!emailInput.value.trim() && booking.email) {
+            emailInput.value = booking.email;
+        }
+
+        if (!amountInput.value && booking.estimatedFare != null) {
+            amountInput.value = booking.estimatedFare;
+        }
+
+        updateSummary();
+    } catch (error) {
+        console.error("Unable to load booking details:", error);
+    }
+}
+autoFillPaymentDetails();
+        updateSummary();
+    </script>
+
+</body>
+</html>

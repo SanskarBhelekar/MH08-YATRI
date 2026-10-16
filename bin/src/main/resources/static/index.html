@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MH 08 YATRI | Ride & Transport</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="navbar">
+
+        <a href="#home" class="brand">
+
+            <
+<div class="brand-mark">
+    <img src="/logo.jpeg" alt="MH 08 YATRI Logo"
+         class="logo-img">
+</div>
+
+
+            <div class="brand-text">
+                <span>YOUR JOURNEY</span>
+                <strong>MH 08 YATRI</strong>
+            </div>
+
+        </a>
+
+        <nav class="navigation">
+
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#vehicles">Vehicles</a>
+            <a href="#booking">Book Ride</a>
+
+        </nav>
+
+        <button
+            class="header-button"
+            id="headerBook"
+            type="button"
+        >
+            Book Now
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-left">
+
+            <div class="location-pill">
+
+                <span class="live-dot"></span>
+
+                Maharashtra • India
+
+            </div>
+
+            <h1>
+                Move Smart.<br>
+                Travel <span>Better.</span>
+            </h1>
+
+            <p>
+                Book bikes, autos, cars, buses and goods vehicles
+                with MH 08 YATRI. Fast booking, reliable drivers
+                and professional transportation.
+            </p>
+
+            <div class="hero-actions">
+
+                <button
+                    class="btn btn-yellow"
+                    id="heroRide"
+                    type="button"
+                >
+                    Book a Ride →
+                </button>
+
+                <button
+                    class="btn btn-outline"
+                    id="heroGoods"
+                    type="button"
+                >
+                    Transport Goods
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK BOOK -->
+
+        <div class="hero-booking">
+
+            <div class="booking-mini-header">
+
+                <div>
+
+                    <span>QUICK BOOKING</span>
+
+                    <h3>
+                        Where are you going?
+                    </h3>
+
+                </div>
+
+                <div class="mini-icon">
+                    ↗
+                </div>
+
+            </div>
+
+
+            <div class="mini-location">
+
+                <div class="location-point pickup-point"></div>
+
+                <div class="mini-input">
+
+                    <small>PICKUP</small>
+
+                    <input
+                        id="quickPickup"
+                        type="text"
+                        placeholder="Enter pickup location"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="mini-line"></div>
+
+
+            <div class="mini-location">
+
+                <div class="location-point drop-point"></div>
+
+                <div class="mini-input">
+
+                    <small>DESTINATION</small>
+
+                    <input
+                        id="quickDrop"
+                        type="text"
+                        placeholder="Enter destination"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="quick-button"
+                id="quickBook"
+                type="button"
+            >
+
+                <span>
+                    Find a Vehicle
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+            <div class="secure-text">
+                🔒 Safe • Reliable • Professional
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+    <div class="section-container">
+
+        <div class="section-top">
+
+            <div>
+
+                <span class="eyebrow">
+                    OUR SERVICES
+                </span>
+
+                <h2>
+                    One platform.<br>
+                    <span>Every journey.</span>
+                </h2>
+
+            </div>
+
+            <p>
+                From daily rides to commercial goods
+                transportation, MH 08 YATRI connects
+                you with the right vehicle.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="service-card service-main">
+
+                <span class="service-number">
+                    01
+                </span>
+
+                <div class="service-icon">
+                    🚕
+                </div>
+
+                <h3>
+                    Ride Booking
+                </h3>
+
+                <p>
+                    Book a bike, auto, car or bus
+                    for your daily journey.
+                </p>
+
+                <button
+                    class="service-button ride-button"
+                    type="button"
+                >
+                    BOOK A RIDE →
+                </button>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <span class="service-number">
+                    02
+                </span>
+
+                <div class="service-icon">
+                    🚚
+                </div>
+
+                <h3>
+                    Goods Transport
+                </h3>
+
+                <p>
+                    Transport your goods with
+                    suitable commercial vehicles.
+                </p>
+
+                <button
+                    class="service-button goods-button"
+                    type="button"
+                >
+                    TRANSPORT GOODS →
+                </button>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <span class="service-number">
+                    03
+                </span>
+
+                <div class="service-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Live Route
+                </h3>
+
+                <p>
+                    View your road route, distance
+                    and estimated travel time.
+                </p>
+
+                <button
+                    class="service-button ride-button"
+                    type="button"
+                >
+                    VIEW ROUTE →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VEHICLES
+===================================================== -->
+
+<section class="vehicles" id="vehicles">
+
+    <div class="section-container">
+
+        <div class="center-heading">
+
+            <span class="eyebrow">
+                CHOOSE YOUR VEHICLE
+            </span>
+
+            <h2>
+                Built for <span>every trip.</span>
+            </h2>
+
+            <p>
+                Select the vehicle that matches your journey.
+            </p>
+
+        </div>
+
+
+        <div class="vehicle-grid">
+
+            <button
+                class="vehicle-card"
+                data-vehicle="Bike"
+                type="button"
+            >
+                <strong>🏍️</strong>
+                <span>Bike</span>
+                <small>₹8/km</small>
+            </button>
+
+
+            <button
+                class="vehicle-card"
+                data-vehicle="Auto"
+                type="button"
+            >
+                <strong>🛺</strong>
+                <span>Auto</span>
+                <small>₹12/km</small>
+            </button>
+
+
+            <button
+                class="vehicle-card"
+                data-vehicle="Car"
+                type="button"
+            >
+                <strong>🚗</strong>
+                <span>Car</span>
+                <small>₹18/km</small>
+            </button>
+
+
+            <button
+                class="vehicle-card"
+                data-vehicle="Bus"
+                type="button"
+            >
+                <strong>🚌</strong>
+                <span>Bus</span>
+                <small>₹35/km</small>
+            </button>
+
+
+            <button
+                class="vehicle-card"
+                data-vehicle="Tempo"
+                type="button"
+            >
+                <strong>🚐</strong>
+                <span>Tempo</span>
+                <small>₹28/km</small>
+            </button>
+
+
+            <button
+                class="vehicle-card"
+                data-vehicle="Truck"
+                type="button"
+            >
+                <strong>🚛</strong>
+                <span>Truck</span>
+                <small>₹42/km</small>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section class="booking" id="booking">
+
+    <div class="section-container">
+
+        <div class="booking-title">
+
+            <span class="eyebrow">
+                BOOKING
+            </span>
+
+            <h2>
+                Plan your <span>journey.</span>
+            </h2>
+
+        </div>
+
+
+        <!-- MODE TABS -->
+
+        <div class="tabs">
+
+            <button
+                id="rideMode"
+                class="active"
+                type="button"
+            >
+                🚕 Ride
+            </button>
+
+            <button
+                id="goodsMode"
+                type="button"
+            >
+                📦 Goods
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             BOOKING FORM + MAP
+        ================================================== -->
+
+        <div class="booking-main-grid">
+
+
+            <!-- BOOKING FORM -->
+
+            <div class="booking-form">
+
+                <h2 id="formTitle">
+                    Book a Ride
+                </h2>
+
+                <p id="formSubtitle">
+                    Fill in your journey details.
+                </p>
+
+
+                <!-- CUSTOMER NAME -->
+
+                <div class="form-group">
+
+                    <label for="customerName">CUSTOMER NAME</label>
+
+                    <div class="location-input">
+
+                        <input
+                            id="customerName"
+                            type="text"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PICKUP -->
+
+                <div class="form-group">
+
+                    <label for="pickup">
+                        📍 PICKUP LOCATION
+                    </label>
+
+                    <div class="location-input">
+
+                        <span class="input-icon pickup-icon">
+                            ●
+                        </span>
+
+                        <input
+                            id="pickup"
+                            type="text"
+                            placeholder="Enter pickup location"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESTINATION -->
+
+                <div class="form-group">
+
+                    <label for="drop">
+                        🏁 DESTINATION
+                    </label>
+
+                    <div class="location-input">
+
+                        <span class="input-icon drop-icon">
+                            ◆
+                        </span>
+
+                        <input
+                            id="drop"
+                            type="text"
+                            placeholder="Enter destination"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CURRENT LOCATION -->
+
+                <button
+                    class="location-button"
+                    id="currentLocation"
+                    type="button"
+                >
+                    ◎ Use my current location
+                </button>
+
+
+                <!-- VEHICLE -->
+
+                <div class="form-group">
+
+                    <label for="vehicle">
+                        🚘 VEHICLE
+                    </label>
+
+                    <select id="vehicle">
+
+                        <option value="">
+                            Select vehicle
+                        </option>
+
+                        <option value="Bike">
+                            Bike
+                        </option>
+
+                        <option value="Auto">
+                            Auto
+                        </option>
+
+                        <option value="Car">
+                            Car
+                        </option>
+
+                        <option value="Bus">
+                            Bus
+                        </option>
+
+                        <option value="Tempo">
+                            Tempo
+                        </option>
+
+                        <option value="Truck">
+                            Truck
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATE TIME -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            DATE
+                        </label>
+
+                        <input
+                            id="date"
+                            type="date"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="time">
+                            TIME
+                        </label>
+
+                        <input
+                            id="time"
+                            type="time"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- FARE -->
+
+                <div class="fare-box">
+
+                    <div>
+
+                        <span>
+                            Estimated Fare
+                        </span>
+
+                        <small id="fareFormula">
+                            Select vehicle and route
+                        </small>
+
+                    </div>
+
+                    <strong id="fare">
+                        ₹ --
+                    </strong>
+
+                </div>
+
+
+                <!-- BOOK -->
+
+                <button
+                    class="book-button"
+                    id="bookButton"
+                    type="button"
+                >
+
+                    <span id="bookText">
+                        Book My Ride
+                    </span>
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- MAP -->
+
+            <div class="map-wrapper">
+
+                <div class="map-header">
+
+                    <div>
+
+                        <span>
+                            LIVE ROAD ROUTE
+                        </span>
+
+                        <h3>
+                            Journey Map
+                        </h3>
+
+                    </div>
+
+                    <div class="map-status">
+
+                        <span class="status-dot"></span>
+
+                        <span id="mapStatus">
+                            Ready
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="map"
+                    class="professional-map"
+                ></div>
+
+
+                <!-- MAP CONTROLS -->
+
+                <div class="map-controls">
+
+                    <button
+                        id="fitRoute"
+                        type="button"
+                        title="Fit route"
+                    >
+                        ⛶
+                    </button>
+
+                    <button
+                        id="clearRoute"
+                        type="button"
+                        title="Clear route"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- ROUTE INFORMATION -->
+
+                <div class="route-info">
+
+                    <div class="route-info-item">
+
+                        <span>
+                            📍
+                        </span>
+
+                        <div>
+
+                            <small>
+                                PICKUP
+                            </small>
+
+                            <strong id="routePickup">
+                                Not selected
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="route-line"></div>
+
+
+                    <div class="route-info-item">
+
+                        <span>
+                            🏁
+                        </span>
+
+                        <div>
+
+                            <small>
+                                DESTINATION
+                            </small>
+
+                            <strong id="routeDrop">
+                                Not selected
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="route-stats">
+
+                        <div>
+
+                            <small>
+                                DISTANCE
+                            </small>
+
+                            <strong id="routeDistance">
+                                -- km
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                TIME
+                            </small>
+
+                            <strong id="routeTime">
+                                -- min
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="mapLoading"
+                    class="map-loading"
+                >
+
+                    <div class="loader"></div>
+
+                    <span>
+                        Finding the best road route...
+                    </span>
+
+                </div>
+
+
+                <!-- MAP MESSAGE -->
+
+                <div
+                    id="mapMessage"
+                    class="map-message"
+                >
+                    Enter pickup and destination
+                    to see your route.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DRIVER PANEL — BELOW BOOKING + MAP
+        ================================================== -->
+
+        <div class="driver-panel">
+
+            <!-- DRIVER HEADER -->
+
+            <div class="driver-panel-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        DRIVER
+                    </span>
+
+                    <h2>
+                        Driver Information
+                    </h2>
+
+                </div>
+
+                <div class="driver-live">
+
+                    <span></span>
+
+                    Available
+
+                </div>
+
+            </div>
+
+
+            <!-- DRIVER PROFILE -->
+
+            <div class="driver-profile">
+
+                <div class="driver-photo">
+
+                    <div class="driver-avatar">
+                        👨🏻
+                    </div>
+
+                    <div class="driver-online"></div>
+
+                </div>
+
+
+                <div class="driver-basic">
+
+                    <h3>
+                        Rajesh Patil
+                    </h3>
+
+                    <div class="driver-rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <strong>
+                            4.9
+                        </strong>
+
+                        <small>
+                            (328 rides)
+                        </small>
+
+                    </div>
+
+                    <p>
+                        Professional Driver
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- VERIFICATION -->
+
+            <div class="verification-box">
+
+                <div class="verification-title">
+
+                    <span class="verification-icon">
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Driver Verified
+                        </strong>
+
+                        <small>
+                            MH 08 YATRI verified partner
+                        </small>
+
+                    </div>
+
+                    <span class="verified-badge">
+                        VERIFIED
+                    </span>
+
+                </div>
+
+
+                <div class="verification-list">
+
+                    <div class="verification-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Driving Licence
+                            </strong>
+
+                            <small>
+                                Verified
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="verification-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Vehicle Documents
+                            </strong>
+
+                            <small>
+                                Verified
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="verification-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Identity Verification
+                            </strong>
+
+                            <small>
+                                Verified
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="verification-item">
+
+                        <span>✓</span>
+
+                        <div>
+
+                            <strong>
+                                Background Check
+                            </strong>
+
+                            <small>
+                                Completed
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DRIVER DETAILS -->
+
+            <div class="driver-details">
+
+                <div class="driver-detail">
+
+                    <span>
+                        🚘
+                    </span>
+
+                    <div>
+
+                        <small>
+                            VEHICLE
+                        </small>
+
+                        <strong>
+                            Maruti Suzuki Dzire
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="driver-detail">
+
+                    <span>
+                        🔢
+                    </span>
+
+                    <div>
+
+                        <small>
+                            VEHICLE NUMBER
+                        </small>
+
+                        <strong>
+                            MH 08 AB 4521
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="driver-detail">
+
+                    <span>
+                        🎨
+                    </span>
+
+                    <div>
+
+                        <small>
+                            VEHICLE COLOR
+                        </small>
+
+                        <strong>
+                            White
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="driver-detail">
+
+                    <span>
+                        🧑
+                    </span>
+
+                    <div>
+
+                        <small>
+                            EXPERIENCE
+                        </small>
+
+                        <strong>
+                            6+ Years
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="driver-actions">
+
+                <button
+                    id="callDriver"
+                    type="button"
+                >
+                    📞 Call Driver
+                </button>
+
+                <button
+                    id="driverDetails"
+                    type="button"
+                >
+                    View Details →
+                </button>
+
+            </div>
+
+
+            <!-- SAFETY -->
+
+            <div class="driver-safety">
+
+                <span>
+                    🛡️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Your safety matters
+                    </strong>
+
+                    <small>
+                        Driver information is shown
+                        after vehicle assignment.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="section-container">
+
+        <strong>
+            MH 08 YATRI
+        </strong>
+
+        <span>
+            Ride • Transport • Travel
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     LEAFLET JS
+===================================================== -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<!-- YOUR JS -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
